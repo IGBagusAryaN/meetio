@@ -3,11 +3,11 @@ import { SignIn } from "@clerk/nextjs";
 import { useSearchParams } from "next/navigation";
 import React from "react";
 
-const page = () => {
+export default function Page() {
   const searchParams = useSearchParams();
   const redirectUrl = searchParams.get("redirectUrl") || "/";
 
   return <SignIn redirectUrl={redirectUrl} />;
 };
 
-export default page;
+

@@ -26,51 +26,57 @@ const Dashboard = () => {
   });
 
   useEffect(() => {
-    setValue("username", user?.username);
-  }, [isLoaded]);
+    if (isLoaded && user?.username) {
+      setValue("username", user.username);
+    }
+  }, [isLoaded, user?.username, setValue]);
 
   const { loading, error, fn: fnUpdateUsername } = useFetch(updateUsername);
 
   const onSubmit = async (data) => {
- fnUpdateUsername({ username: data.username }); 
+    fnUpdateUsername({ username: data.username });
   };
   return (
     <div className="grid grid-cols-2 max-w-6xl mx-auto space-y-7 mt-10 px-6">
-    <AgendaLottie/>
-    <div className=" w-full">
-      <Card  className="border-0 shadow-none">
-        <CardHeader>
-          <CardTitle className="text-lg">Welcome, {user?.firstName}</CardTitle>
-        </CardHeader>
-        {/* Latest Updates */}
-      </Card>
+      <AgendaLottie />
+      <div className=" w-full">
+        <Card className="border-0 shadow-none">
+          <CardHeader>
+            <CardTitle className="text-lg">
+              Welcome, {user?.firstName}
+            </CardTitle>
+          </CardHeader>
+          {/* Latest Updates */}
+        </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Your Unique Link</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-            <div>
-              <div className="flex items-center gap-2">
-                <span>{window?.location.origin}</span>
-                <Input {...register("username")} placeholder="username" />
+        <Card>
+          <CardHeader>
+            <CardTitle>Your Unique Link</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+              <div>
+                <div className="flex items-center gap-2">
+                  <span>{window?.location.origin}</span>
+                  <Input {...register("username")} placeholder="username" />
+                </div>
+                {errors.username && (
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.username.message}
+                  </p>
+                )}
+                {error && (
+                  <p className="text-red-500 text-sm mt-1">{error.message}</p>
+                )}
               </div>
-              {errors.username && (
-                <p className="text-red-500 text-sm mt-1">
-                  {errors.username.message}
-                </p>
-              )}
-              {error && (
-                <p className="text-red-500 text-sm mt-1">{error.message}</p>
-              )}
-            </div>
-            {loading && <BarLoader width={"100%"} color="#36d7b7" />}
-            <Button type="submit" className="bg-[#E19B2C] !important">Update Username</Button>
-          </form>
-        </CardContent>
-      </Card>
-    </div>
+              {loading && <BarLoader width={"100%"} color="#36d7b7" />}
+              <Button type="submit" className="bg-[#E19B2C] !important">
+                Update Username
+              </Button>
+            </form>
+          </CardContent>
+        </Card>
+      </div>
     </div>
   );
 };
