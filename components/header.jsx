@@ -110,7 +110,7 @@ export const Header = () => {
                     )}
 
             <Link href={"/events?create=true"} onClick={() => setIsOpen(false)}>
-              <Button className="w-full bg-[#1E1E2E]">
+              <Button className="w-full bg-[#1E1E2E] mb-5">
                 <PenBox className="mr-2 h-4 w-4" /> Create Event
               </Button>
             </Link>

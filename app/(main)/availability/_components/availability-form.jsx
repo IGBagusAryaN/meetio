@@ -54,7 +54,8 @@ const AvailabilityForm = ({ initialData }) => {
       ].map((day) => {
         const isAvailable = watch(`${day}.isAvailable`);
         return (
-          <div key={day} className="flex items-center space-x-4 mb-4">
+          <div key={day} className="flex flex-col md:flex-row md:items-center space-x-4 mb-4">
+            <div className="flex gap-2 items-center">
             <Controller
               name={`${day}.isAvailable`}
               control={control}
@@ -77,8 +78,9 @@ const AvailabilityForm = ({ initialData }) => {
               {day.charAt(0).toUpperCase() + day.slice(1)}
             </span>
 
+</div>
             {isAvailable && (
-              <>
+              <div className="flex items-center mt-3 md:mt-0">
                 <Controller
                   name={`${day}.startTime`}
                   control={control}
@@ -135,7 +137,7 @@ const AvailabilityForm = ({ initialData }) => {
                     {errors[day].endTime.message}
                   </span>
                 )}
-              </>
+              </div>
             )}
           </div>
         );
@@ -148,7 +150,7 @@ const AvailabilityForm = ({ initialData }) => {
           {...register("timeGap", {
             valueAsNumber: true,
           })}
-          className="w-32"
+          className="w-full md:w-32"
         />
 
         {errors?.timeGap && (

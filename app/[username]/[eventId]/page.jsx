@@ -30,7 +30,7 @@ export default async function EventBookingPage({ params }) {
   }
 
   return (
-    <div className="grid grid-cols-[2fr_3fr] w-full max-w-[1100px] mx-auto pb-8 pt-28 gap-5">
+    <div className="grid grid-cols-1 md:grid-cols-[2fr_3fr] w-full max-w-[1100px] mx-auto pb-8 pt-28 gap-5">
      
       <EventDetails event={event} />
       <Suspense fallback={<div>Loading booking form...</div>}>

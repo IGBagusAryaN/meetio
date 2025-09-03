@@ -5,7 +5,7 @@ import React from "react";
 const EventDetails = ({ event }) => {
   const { user } = event;
   return (
-    <div className="py-10 lg:w-full">
+    <div className="py-10 lg:w-full px-7 md:px-0">
       <h1 className="text-3xl font-bold mb-4 flex items-center">📌{event.title}</h1>
       <div className="flex items-center mb-4">
         <Avatar className="w-12 h-12 mr-4">
