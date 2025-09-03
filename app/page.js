@@ -44,10 +44,10 @@ const howItWorks = [
 export default function Home() {
   return (
     <div>
-      <section className="bg-white min-h-screen flex items-center justify-center pt-20">
+      <section className="bg-white min-h-screen flex items-center justify-center pt-20 mb-20 md:mb-0">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-[3fr_1fr] gap-12 items-center">
-          <div>
-            <h1 className="text-4xl md:text-7xl font-bold text-[#1E1E2E] mb-6 leading-tight">
+          <div className="order-2 md:order-1">
+            <h1 className="text-4xl md:text-7xl font-bold text-[#1E1E2E] -mt-40 md:mt-0 md:mb-6 leading-tight">
               Simplify Your Scheduling
             </h1>
             <p className="text-lg text-gray-700 mb-8">
@@ -62,7 +62,7 @@ export default function Home() {
             </a>
           </div>
 
-          <div className="flex justify-center">
+          <div className="flex justify-center order-1 md:order-2">
             <MeetioLottie />
           </div>
         </div>

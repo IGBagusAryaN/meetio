@@ -4,7 +4,7 @@ import { ChartNoAxesGantt } from "lucide-react";
 import React from "react";
 
 const UserMenu = () => {
-  // const { user } = useUser();
+  const { user } = useUser();
   return (
     <div className="flex items-center gap-2">
       <UserButton
@@ -23,11 +23,11 @@ const UserMenu = () => {
           <UserButton.Action label="manageAccount" />
         </UserButton.MenuItems>
       </UserButton>
-      {/* {user && (
+      {user && (
         <span className="text-sm text-gray-700 dark:text-gray-200">
           {user.primaryEmailAddress?.emailAddress}
         </span>
-      )} */}
+      )}
     </div>
   );
 };

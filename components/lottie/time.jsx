@@ -16,11 +16,15 @@ export default function TimeLottie() {
 
   return (
     <Lottie
-      className='-mt-10'
+      className='md:-mt-10'
       animationData={animationData}
       loop
       autoplay
-      style={{ width: 500, height: 500 }}
+       style={{
+          width: "100%",
+          maxWidth: 500,   // maksimal width desktop
+          height: "auto",  // maintain aspect ratio
+        }}
     />
   );
 }

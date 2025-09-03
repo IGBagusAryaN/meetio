@@ -11,24 +11,24 @@ export const metadata = {
 
 export default async function MeetingsPage() {
   return (
-    <div className="max-w-[1100px] mx-auto mt-10"> 
-          <h1 className="text-3xl font-bold">Meetings Lists</h1>
-    <Tabs defaultValue="upcoming" className=" mt-10">
-      <TabsList className="mb-4">
-        <TabsTrigger value="upcoming">Upcoming</TabsTrigger>
-        <TabsTrigger value="past">Past</TabsTrigger>
-      </TabsList>
-      <TabsContent value="upcoming">
-        <Suspense fallback={<div>Loading upcoming meetings...</div>}>
-          <UpcomingMeetings />
-        </Suspense>
-      </TabsContent>
-      <TabsContent value="past">
-        <Suspense fallback={<div>Loading past meetings...</div>}>
-          <PastMeetings />
-        </Suspense>
-      </TabsContent>
-    </Tabs>
+    <div className="max-w-[1100px] mx-auto mt-10 px-7 md:px-0">
+      <h1 className="text-3xl font-bold">Meetings Lists</h1>
+      <Tabs defaultValue="upcoming" className=" mt-10">
+        <TabsList className="mb-4">
+          <TabsTrigger value="upcoming">Upcoming</TabsTrigger>
+          <TabsTrigger value="past">Past</TabsTrigger>
+        </TabsList>
+        <TabsContent value="upcoming">
+          <Suspense fallback={<div>Loading upcoming meetings...</div>}>
+            <UpcomingMeetings />
+          </Suspense>
+        </TabsContent>
+        <TabsContent value="past">
+          <Suspense fallback={<div>Loading past meetings...</div>}>
+            <PastMeetings />
+          </Suspense>
+        </TabsContent>
+      </Tabs>
     </div>
   );
 }
