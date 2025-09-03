@@ -68,7 +68,7 @@ const Dashboard = () => {
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
               <div>
                 <div className="flex flex-col lg:flex-row lg:items-center gap-2">
-                  <span className="text-sm lg:text-base break-all">{origin}</span>
+                  <span className="text-sm lg:text-base">{origin}</span>
                   <Input {...register("username")} placeholder="username" />
                 </div>
                 {errors.username && (
