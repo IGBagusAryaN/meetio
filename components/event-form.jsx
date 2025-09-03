@@ -32,7 +32,10 @@ const EventForm = ({ onSubmitForm }) => {
     },
   });
 
-  const { loading, error, fn: fnCreateEvent } = useFetch(createEvents);
+  const { loading, error, fn: fnCreateEvent } = useFetch(createEvents, {
+    successMessage: "Event berhasil dibuat!", 
+    errorMessage: "Gagal membuat Event",
+  });
 
   const onSubmit = async (data) => {
     await fnCreateEvent(data);

@@ -11,7 +11,7 @@ export const metadata = {
 
 export default async function MeetingsPage() {
   return (
-    <div className="max-w-[1100px] mx-auto mt-10 px-7 md:px-0">
+    <div className="max-w-[1100px] mx-auto mt-10 px-7 lg:px-0">
       <h1 className="text-3xl font-bold">Meetings Lists</h1>
       <Tabs defaultValue="upcoming" className=" mt-10">
         <TabsList className="mb-4">

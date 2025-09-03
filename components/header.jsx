@@ -40,7 +40,7 @@ export const Header = () => {
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-4">
+        <div className="hidden lg:flex items-center gap-4">
           <Link href={"/events?create=true"}>
             <Button className="bg-[#1E1E2E]">
               <PenBox className="mr-2 h-4 w-4" /> Create Event
@@ -57,7 +57,7 @@ export const Header = () => {
         </div>
 
         {/* Mobile Menu Button */}
-        <div className="md:hidden">
+        <div className="lg:hidden">
           <Button
             variant="ghost"
             size="icon"
@@ -76,7 +76,7 @@ export const Header = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.25, ease: "easeInOut" }}
-            className="md:hidden bg-white border-t shadow-lg px-6 py-4 flex flex-col gap-3"
+            className="lg:hidden bg-white border-t shadow-lg px-6 py-4 flex flex-col gap-3"
           >
                     {pathname !== "/" && (
             <ul className="space-y-4 text-lg flex-1 mb-3">

@@ -36,18 +36,22 @@ const Dashboard = () => {
     }
   }, [isLoaded, user?.username, setValue]);
 
-  const { loading, error, fn: fnUpdateUsername } = useFetch(updateUsername);
+    const { loading, error, fn: fnUpdateUsername } = useFetch(updateUsername, {
+    successMessage: "Username berhasil diupdate!",
+    errorMessage: "Gagal update username",
+  });
 
   const onSubmit = async (data) => {
-    fnUpdateUsername({ username: data.username });
+    await fnUpdateUsername({ username: data.username });
   };
 
+
   return (
-    <div className="max-w-6xl mx-auto mt-10 px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-      <div className="order-1 md:order-1 flex justify-center">
+    <div className="max-w-6xl mx-auto mt-10 px-6 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+      <div className="order-1 lg:order-1 flex justify-center">
         <AgendaLottie />
       </div>
-      <div className="order-2 md:order-2 w-full -mt-48  mb-20 md:mb-0">
+      <div className="order-2 lg:order-2 w-full -mt-48  mb-20 lg:mb-0">
         <Card className="border-0 shadow-none">
           <CardHeader>
             <CardTitle className="text-lg">
@@ -63,8 +67,8 @@ const Dashboard = () => {
           <CardContent>
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
               <div>
-                <div className="flex flex-col md:flex-row md:items-center gap-2">
-                  <span className="text-sm md:text-base break-all">{origin}</span>
+                <div className="flex flex-col lg:flex-row lg:items-center gap-2">
+                  <span className="text-sm lg:text-base break-all">{origin}</span>
                   <Input {...register("username")} placeholder="username" />
                 </div>
                 {errors.username && (

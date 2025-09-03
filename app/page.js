@@ -44,10 +44,10 @@ const howItWorks = [
 export default function Home() {
   return (
     <div>
-      <section className="bg-white min-h-screen flex items-center justify-center pt-20 mb-20 md:mb-0">
-        <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-[3fr_1fr] gap-12 items-center">
-          <div className="order-2 md:order-1">
-            <h1 className="text-4xl md:text-7xl font-bold text-[#1E1E2E] -mt-40 md:mt-0 md:mb-6 leading-tight">
+      <section className="bg-white min-h-screen flex items-center justify-center pt-20 mb-20 lg:mb-0">
+        <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-[3fr_1fr] gap-12 items-center">
+          <div className="order-2 lg:order-1">
+            <h1 className="text-4xl lg:text-7xl font-bold text-[#1E1E2E] -mt-40 lg:mt-0 lg:mb-6 leading-tight">
               Simplify Your Scheduling
             </h1>
             <p className="text-lg text-gray-700 mb-8">
@@ -62,7 +62,7 @@ export default function Home() {
             </a>
           </div>
 
-          <div className="flex justify-center order-1 md:order-2">
+          <div className="flex justify-center order-1 lg:order-2">
             <MeetioLottie />
           </div>
         </div>
@@ -71,7 +71,7 @@ export default function Home() {
         <h2 className="text-3xl font-bold text-center mb-12 text-blue-600">
           Key Features
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => {
             return (
               <Card key={index}>
@@ -99,7 +99,7 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-center mb-12 text-blue-600">
           How it Works
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 lg:grid-cols-4 gap-8">
             {howItWorks.map((step, index)=> (
               <div className="text-center" key={index}>
                 <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">

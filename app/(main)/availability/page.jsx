@@ -8,13 +8,13 @@ const AvailabilityPage = async () => {
   const availability = await getUserAvailability();
   console.log(availability);
   return (
-    <div className="max-w-[1100px] mx-auto mt-10 px-7 md:px-0 mb-20 md:mb-0">
+    <div className="max-w-[1100px] mx-auto mt-10 px-7 lg:px-0 mb-20 lg:mb-0">
       <h1 className="text-3xl font-bold">Your Availability </h1>
-      <div className="grid md:grid-cols-2">
-        <div className="order-2 md:order-1">
+      <div className="grid lg:grid-cols-2">
+        <div className="order-2 lg:order-1">
           <AvailabilityForm initialData={availability || defaultAvailability} />
         </div>
-        <div className="order-1 md:order-2">
+        <div className="order-1 lg:order-2">
           <TimeLottie />
         </div>
       </div>

@@ -72,7 +72,7 @@ const Testimonials = () => {
       >
         <CarouselContent className="-ml-1">
           {testimonials.map((testimonial, index) => (
-            <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+            <CarouselItem key={index} className="lg:basis-1/2 lg:basis-1/3">
               <div className="p-1">
                 <Card className="h-full">
                   <CardContent className="flex flex-col justify-center h-full p-6">

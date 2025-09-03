@@ -16,7 +16,7 @@ export default function MeetioLottie() {
 
   return (
     <Lottie
-    className='-mt-28 md:mt-0 md:-mr-20'
+    className='-mt-28 lg:mt-0 lg:-mr-20'
       animationData={animationData}
       loop
       autoplay

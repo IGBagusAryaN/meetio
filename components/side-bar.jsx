@@ -37,7 +37,7 @@ export default function Sidebar() {
 
   return (
     <>
-      <div className="fixed top-0 left-0 h-screen w-16 bg-[#1E1E2E] md:flex flex-col items-center justify-between py-4 z-50 hidden">
+      <div className="fixed top-0 left-0 h-screen w-16 bg-[#1E1E2E] lg:flex flex-col items-center justify-between py-4 z-50 hidden">
         <div
           className={`flex flex-col justify-between items-center gap-1 transition-transform duration-300 -mt-2 ${
             isOpen ? "scale-95 opacity-0 pointer-events-none" : "scale-100"

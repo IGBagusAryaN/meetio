@@ -32,14 +32,17 @@ const AvailabilityForm = ({ initialData }) => {
   });
 
   const {
-    fn:fnupdateAvailability,
+    fn: fnUpdateAvailability,
     loading,
     error,
-  } = useFetch(updateAvailability);
+  } = useFetch(updateAvailability, {
+    successMessage: "Availability berhasil diupdate!", 
+    errorMessage: "Gagal update availability",
+  });
 
   const onSubmit = async (data) => {
-    await fnupdateAvailability(data)
-  }
+    await fnUpdateAvailability(data);
+  };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className=" mt-10">
@@ -54,7 +57,7 @@ const AvailabilityForm = ({ initialData }) => {
       ].map((day) => {
         const isAvailable = watch(`${day}.isAvailable`);
         return (
-          <div key={day} className="flex flex-col md:flex-row md:items-center space-x-4 mb-4">
+          <div key={day} className="flex flex-col lg:flex-row lg:items-center space-x-4 mb-4">
             <div className="flex gap-2 items-center">
             <Controller
               name={`${day}.isAvailable`}
@@ -80,7 +83,7 @@ const AvailabilityForm = ({ initialData }) => {
 
 </div>
             {isAvailable && (
-              <div className="flex items-center mt-3 md:mt-0">
+              <div className="flex items-center gap-3 mt-3 lg:mt-0">
                 <Controller
                   name={`${day}.startTime`}
                   control={control}
@@ -150,7 +153,7 @@ const AvailabilityForm = ({ initialData }) => {
           {...register("timeGap", {
             valueAsNumber: true,
           })}
-          className="w-full md:w-32"
+          className="w-full lg:w-32"
         />
 
         {errors?.timeGap && (

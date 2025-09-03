@@ -24,7 +24,7 @@ const UserPage = async ({ params }) => {
   }
   console.log(user);
   return (
-    <div className="max-w-[1100px] mx-auto pt-36 px-7 md:px-0">
+    <div className="max-w-[1100px] mx-auto pt-36 px-7 lg:px-0">
       <div className="flex gap-5 mb-5">
         <Avatar className="w-24 h-24 mb-4">
           <AvatarImage src={user.imageUrl} alt={user.name} />

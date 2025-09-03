@@ -60,7 +60,10 @@ export default function BookingForm({ event, availability }) {
     }
   }, [selectedTime, setValue]);
 
-  const { loading, data, fn: fnCreateBooking } = useFetch(createBooking);
+  const { loading, data, fn: fnCreateBooking } = useFetch(createBooking, {
+    successMessage: "Booking berhasil dibuat!", 
+    errorMessage: "Gagal membuat booking",
+  });
 
   const onSubmit = async (data) => {
     console.log(data);
@@ -111,7 +114,7 @@ export default function BookingForm({ event, availability }) {
 
   return (
     <div className="flex flex-col gap-8 p-10 border">
-      <div className="md:h-96 flex flex-col md:flex-row gap-5 ">
+      <div className="lg:h-96 flex flex-col lg:flex-row gap-5 ">
         <div className="w-full">
           <DayPicker
             mode="single"

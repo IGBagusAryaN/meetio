@@ -24,7 +24,7 @@ const UserMenu = () => {
         </UserButton.MenuItems>
       </UserButton>
       {user && (
-        <span className="text-sm text-gray-700 dark:text-gray-200 block md:hidden">
+        <span className="text-sm text-gray-700 dark:text-gray-200 block lg:hidden">
           {user.primaryEmailAddress?.emailAddress}
         </span>
       )}

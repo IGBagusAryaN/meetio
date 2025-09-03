@@ -16,7 +16,7 @@ export default function AgendaLottie() {
 
   return (
     <Lottie
-      className='-mt-48 md:-mt-20 md:-ml-20'
+      className='-mt-48 lg:-mt-20 lg:-ml-20'
       animationData={animationData}
       loop
       autoplay
