@@ -62,22 +62,24 @@ export default function BookingForm({ event, availability }) {
     successMessage: "Booking berhasil dibuat!",
     errorMessage: "Gagal membuat booking",
   });
+// 🔹 Simpan ke localStorage kalau booking berhasil
+useEffect(() => {
+  if (data?.booking) {
+    localStorage.setItem(
+      `lastBooking-${event.id}`, // unique key per event
+      JSON.stringify(data.booking)
+    );
+    setSavedBooking(data.booking);
+  }
+}, [data, event.id]);
 
-  // 🔹 Simpan ke localStorage kalau booking berhasil
-  useEffect(() => {
-    if (data?.booking) {
-      localStorage.setItem("lastBooking", JSON.stringify(data.booking));
-      setSavedBooking(data.booking);
-    }
-  }, [data]);
-
-  // 🔹 Ambil dari localStorage pas pertama kali load
-  useEffect(() => {
-    const stored = localStorage.getItem("lastBooking");
-    if (stored) {
-      setSavedBooking(JSON.parse(stored));
-    }
-  }, []);
+// 🔹 Ambil dari localStorage pas pertama kali load
+useEffect(() => {
+  const stored = localStorage.getItem(`lastBooking-${event.id}`);
+  if (stored) {
+    setSavedBooking(JSON.parse(stored));
+  }
+}, [event.id]);
 
   const onSubmit = async (formData) => {
     if (!selectedDate || !selectedTime) {

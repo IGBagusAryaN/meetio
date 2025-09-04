@@ -22,14 +22,17 @@ const Events = async () => {
 
   if (events.length === 0) {
     return (
-      <p className="grid gap-4 grid-cols-1 lg:grid-cols-2 max-w-5xl mx-auto mt-10 px-7">
-        You haven&apos;t created any events yet
-      </p>
+      <div className="max-w-[1100px]  mt-10 mx-auto px-7 lg:px-0">
+        <h1 className="text-3xl font-bold">Event list</h1>
+        <p className="mt-10">
+          You haven&apos;t created any events yet
+        </p>
+      </div>
     );
   }
 
   return (
-    <div className="max-w-[1100px]  mt-10 mx-auto px-7">
+    <div className="max-w-[1100px]  mt-10 mx-auto px-7 lg:px-0">
       <h1 className="text-3xl font-bold">Event list</h1>
       <div className="grid gap-4 grid-cols-1 lg:grid-cols-3  mt-10">
         {events.map((event) => (

@@ -36,9 +36,11 @@ const EventCard = ({ event, username, isPublic }) => {
 
   const handleDelete = async () => {
     if (window?.confirm('Are you sure')) {
+      localStorage.removeItem(`lastBooking-${event.id}`);
       await fnDeleteEvent(event.id);
       router.refresh()
     }
+    
   }
 
   const handleCardClick = (e) => {
