@@ -34,6 +34,8 @@ model Event {
   description String?
   duration    Int
   userId      String
+  meetLink      String?    
+  googleEventId String? 
   user        User      @relation("UserEvents", fields: [userId], references: [id])
   bookings    Booking[]
   isPrivate   Boolean   @default(true)

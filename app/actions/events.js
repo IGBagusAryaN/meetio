@@ -10,7 +10,7 @@ import {
   format, 
   isBefore, 
   addMinutes, 
-  parseISO 
+  parse,
 } from "date-fns";
 
 
@@ -191,6 +191,7 @@ export async function getEventAvailability(eventId) {
   return availableDates;
 }
 
+
 function generateAvailableTimeSlots(
   startTime,
   endTime,
@@ -200,14 +201,14 @@ function generateAvailableTimeSlots(
   timeGap = 0
 ) {
   const slots = [];
-  let currentTime = parseISO(
-    `${dateStr}T${startTime.toISOString().slice(11, 16)}`
-  );
-  const slotEndTime = parseISO(
-    `${dateStr}T${endTime.toISOString().slice(11, 16)}`
-  );
 
-  // If the date is today, start from the next available slot after the current time
+  // Ambil jam & menit dari Date lokal, bukan UTC
+  const startStr = format(startTime, "HH:mm");
+  const endStr = format(endTime, "HH:mm");
+
+  let currentTime = parse(`${dateStr} ${startStr}`, "yyyy-MM-dd HH:mm", new Date());
+  const slotEndTime = parse(`${dateStr} ${endStr}`, "yyyy-MM-dd HH:mm", new Date());
+
   const now = new Date();
   if (format(now, "yyyy-MM-dd") === dateStr) {
     currentTime = isBefore(currentTime, now)
