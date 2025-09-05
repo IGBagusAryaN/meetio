@@ -140,7 +140,7 @@ useEffect(() => {
             disabled={[{ before: new Date() }]}
             modifiers={{ available: availableDays }}
             modifiersStyles={{
-              available: { background: "#E19B2C", borderRadius: 100, color: "white" },
+              available: { background: "#E19B2C", borderRadius: 100, color: "white", border: "white !important" },
             }}
           />
         </div>

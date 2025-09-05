@@ -16,7 +16,7 @@ export default function MeetingList({ meetings, type }) {
   }
 
   return (
-    <div className="grid gap-4 lg:grid-cols-2 lg:grid-cols-3 max-w-[1100px] mx-auto">
+    <div className="grid gap-4 grid-cols-2 lg:grid-cols-3 max-w-[1100px] mx-auto">
       {meetings.map((meeting) => (
         <Card key={meeting.id} className="flex flex-col justify-between">
           <CardHeader>

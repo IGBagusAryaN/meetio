@@ -45,13 +45,12 @@ const Dashboard = () => {
     await fnUpdateUsername({ username: data.username });
   };
 
-
   return (
-    <div className="max-w-6xl mx-auto mt-10 px-6 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+    <div className="max-w-6xl mx-auto mt-10 px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
       <div className="order-1 lg:order-1 flex justify-center">
         <AgendaLottie />
       </div>
-      <div className="order-2 lg:order-2 w-full -mt-48  mb-20 lg:mb-0">
+      <div className="order-2 lg:order-2 w-full -mt-48 md:-mt-20 mb-20 lg:mb-0">
         <Card className="border-0 shadow-none">
           <CardHeader>
             <CardTitle className="text-lg">

@@ -46,11 +46,11 @@ export default function Home() {
     <div>
       <section className="bg-white min-h-screen flex items-center justify-center pt-20 mb-20 lg:mb-0">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-[3fr_1fr] gap-12 items-center">
-          <div className="order-2 lg:order-1">
-            <h1 className="text-4xl lg:text-7xl font-bold text-[#1E1E2E] -mt-40 lg:mt-0 lg:mb-6 leading-tight">
+          <div className="order-2 lg:order-1 px-0 md:px-10 lg:px-0 md:-mt-20 lg:mt-0">
+            <h1 className="text-4xl lg:text-7xl font-bold text-[#1E1E2E] -mt-40 md:mt-5 lg:mt-0 lg:mb-6 leading-tight">
               Simplify Your Scheduling
             </h1>
-            <p className="text-lg text-gray-700 mb-8">
+            <p className="text-md lg:text-lg text-gray-700 mb-8">
               Meetio helps you manage your time effectively. Create events, set
               your availability, and let others book time with you seamlessly.
             </p>

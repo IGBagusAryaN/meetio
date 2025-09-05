@@ -16,7 +16,7 @@ export default function TimeLottie() {
 
   return (
     <Lottie
-      className=''
+      className='mr-0 md:-mr-40 lg:mr-0'
       animationData={animationData}
       loop
       autoplay
