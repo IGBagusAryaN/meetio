@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Calendar } from "lucide-react";
 import Image from "next/image";
+import { checkUser } from "@/lib/checkUser";
 
 const features = [
   {
@@ -41,7 +42,10 @@ const howItWorks = [
   },
 ];
 
-export default function Home() {
+export default async function Home() {
+    const user = await checkUser();
+   
+  console.log("DB user:", user);
   return (
     <div>
       <section className="bg-white min-h-screen flex items-center justify-center pt-20 mb-20 lg:mb-0">

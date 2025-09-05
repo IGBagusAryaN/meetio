@@ -1,11 +1,15 @@
 self.addEventListener("install", (event) => {
-  console.log("Service Worker installed");
+  console.log("Service Worker: Installed");
 });
 
 self.addEventListener("activate", (event) => {
-  console.log("Service Worker activated");
+  console.log("Service Worker: Activated");
 });
 
 self.addEventListener("fetch", (event) => {
-  console.log("Fetching:", event.request.url);
+  event.respondWith(
+    caches.match(event.request).then((response) => {
+      return response || fetch(event.request);
+    })
+  );
 });

@@ -6,7 +6,7 @@ import { Header } from "@/components/header";
 import Sidebar from "@/components/side-bar";
 import { Toaster } from "react-hot-toast";
 import CreateEventDrawer from "@/components/create-event";
-import { checkUser } from "@/lib/checkUser";
+
 import ServiceWorkerProvider from "@/components/service-component";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -18,9 +18,7 @@ export const metadata = {
 };
 
 export default async function RootLayout({ children }) {
-   const user = await checkUser();
-   
-  console.log("DB user:", user);
+ 
   return (
     <ClerkProvider>
       <html lang="en">
