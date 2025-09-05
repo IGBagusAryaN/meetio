@@ -39,7 +39,6 @@ export const Header = () => {
         <Link href={"/"} className="flex items-center -mt-2">
           <Image src="/logoo.png" alt="Illustration" width={100} height={100} />
         </Link>
-           <InstallButton/>
 
         {/* Desktop Menu */}
         <div className="hidden lg:flex items-center gap-4">
@@ -56,10 +55,13 @@ export const Header = () => {
           <SignedIn>
             <UserMenu />
           </SignedIn>
+           <InstallButton/>
         </div>
 
         {/* Mobile Menu Button */}
+        
         <div className="lg:hidden">
+          <InstallButton/>
           <Button
             variant="ghost"
             size="icon"
@@ -117,8 +119,7 @@ export const Header = () => {
                 <PenBox className="mr-2 h-4 w-4" /> Create Event
               </Button>
             </Link>
-          
-            <SignedOut>
+                 <SignedOut>
               <SignInButton forceRedirectUrl="/">
                 <Button variant="outline" className="w-full">
                   Login
@@ -128,7 +129,6 @@ export const Header = () => {
             <SignedIn>
               <UserMenu />
             </SignedIn>
-             <InstallButton/>
           </motion.div>
         )}
       </AnimatePresence>

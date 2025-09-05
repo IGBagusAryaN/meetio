@@ -10,7 +10,7 @@ const AvailabilityPage = async () => {
   return (
     <div className="max-w-[1100px] mx-auto mt-10 px-7 lg:px-0 mb-20 lg:mb-0">
       <h1 className="text-3xl font-bold">Your Availability </h1>
-      <div className="grid lg:grid-cols-2">
+      <div className="grid lg:grid-cols-2 mt-10">
         <div className="order-2 lg:order-1">
           <AvailabilityForm initialData={availability || defaultAvailability} />
         </div>

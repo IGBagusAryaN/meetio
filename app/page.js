@@ -50,17 +50,17 @@ export default async function Home() {
     <div>
       <section className="bg-white min-h-screen flex items-center justify-center pt-20 mb-20 lg:mb-0">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-[3fr_1fr] gap-12 items-center">
-          <div className="order-2 lg:order-1 px-0 md:px-10 lg:px-0 md:-mt-20 lg:mt-0">
+          <div className="order-2 lg:order-1 px-0 md:px-10 lg:px-0 md:-mt-20 lg:mt-0 w-full">
             <h1 className="text-4xl lg:text-7xl font-bold text-[#1E1E2E] -mt-40 md:mt-5 lg:mt-0 lg:mb-6 leading-tight">
               Simplify Your Scheduling
             </h1>
-            <p className="text-md lg:text-lg text-gray-700 mb-8">
+            <p className="text-sm lg:text-lg text-gray-700 mt-3 mb-8">
               Meetio helps you manage your time effectively. Create events, set
               your availability, and let others book time with you seamlessly.
             </p>
             <a
               href="/dashboard"
-              className="inline-flex items-center px-6 py-3 bg-[#E19B2C] text-white rounded-md hover:bg-[#785318] transition"
+              className="inline-flex justify-center items-center px-6 py-3 bg-[#E19B2C] text-white rounded-md hover:bg-[#785318] transition w-full lg:w-auto"
             >
               Get Started <span className="ml-2">→</span>
             </a>

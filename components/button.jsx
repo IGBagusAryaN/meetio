@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import { Download } from 'lucide-react';
 
 export default function InstallButton() {
   const [deferredPrompt, setDeferredPrompt] = useState(null);
@@ -34,5 +35,5 @@ export default function InstallButton() {
 
   if (!visible) return null;
 
-  return <button onClick={handleClick}>Install App</button>;
+  return <button onClick={handleClick} title="Download shortcut"><Download size={18}/></button>;
 }
