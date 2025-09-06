@@ -21,7 +21,10 @@ export default function MeetingList({ meetings, type }) {
         <Card key={meeting.id} className="flex flex-col justify-between">
           <CardHeader>
             <CardTitle>{meeting.event.title}</CardTitle>
-            <CardDescription>with {meeting.name}</CardDescription>
+            <CardDescription>
+              with {JSON.parse(meeting.name).join(", ")}
+            </CardDescription>
+
             <CardDescription>
               &quot;{meeting.additionalInfo}&quot;
             </CardDescription>

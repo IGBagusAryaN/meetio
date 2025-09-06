@@ -3,14 +3,15 @@
 import { cancelMeeting } from "@/app/actions/meetings";
 import useFetch from "@/app/hooks/use-fetch";
 import { Button } from "@/components/ui/button";
-
 import { useRouter } from "next/navigation";
-
 
 export default function CancelMeetingButton({ meetingId }) {
   const router = useRouter();
 
-  const { loading, error, fn: fnCancelMeeting } = useFetch(cancelMeeting);
+  const { loading, fn: fnCancelMeeting } = useFetch(cancelMeeting, {
+    successMessage: "Meeting canceled successfully",
+    errorMessage: "Failed to cancel meeting",
+  });
 
   const handleCancel = async () => {
     if (window.confirm("Are you sure you want to cancel this meeting?")) {
@@ -20,11 +21,8 @@ export default function CancelMeetingButton({ meetingId }) {
   };
 
   return (
-    <div className="flex flex-col gap-1">
-      <Button variant="destructive" onClick={handleCancel} disabled={loading}>
-        {loading ? "Canceling..." : "Cancel Meeting"}
-      </Button>
-      {error && <span className="text-red-500 text-sm">{error.message}</span>}
-    </div>
+    <Button variant="destructive" onClick={handleCancel} disabled={loading}>
+      {loading ? "Canceling..." : "Cancel Meeting"}
+    </Button>
   );
 }

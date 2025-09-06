@@ -11,18 +11,22 @@ const useFetch = (cb, { successMessage, errorMessage, disableToast } = {}) => {
     setError(null);
 
     try {
-      const response = await cb(...args);
-      setData(response);
+      const promise = cb(...args);
 
-      if (!disableToast) {
-        toast.success(successMessage || "Successfully updated");
-      }
+      const response = await (disableToast
+        ? promise
+        : toast.promise(promise, {
+            loading: "Loading...",
+            success: successMessage || "Successfully updated",
+            error: errorMessage || "Something went wrong",
+          })
+      );
+
+      setData(response);
+      return response;
     } catch (err) {
       setError(err);
-
-      if (!disableToast) {
-        toast.error(errorMessage || err?.message || "Something wrong");
-      }
+      return null;
     } finally {
       setLoading(false);
     }
