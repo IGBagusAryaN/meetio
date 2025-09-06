@@ -36,7 +36,7 @@ const AvailabilityForm = ({ initialData }) => {
     loading,
     error,
   } = useFetch(updateAvailability, {
-    successMessage: "Availability berhasil diupdate!", 
+    successMessage: "Availability berhasil diupdate!",
     errorMessage: "Gagal update availability",
   });
 
@@ -57,31 +57,33 @@ const AvailabilityForm = ({ initialData }) => {
       ].map((day) => {
         const isAvailable = watch(`${day}.isAvailable`);
         return (
-          <div key={day} className="flex flex-col lg:flex-row lg:items-center space-x-4 mb-4">
+          <div
+            key={day}
+            className="flex flex-col md:flex-row md:items-center space-x-4 mb-4"
+          >
             <div className="flex gap-2 items-center">
-            <Controller
-              name={`${day}.isAvailable`}
-              control={control}
-              render={({ field }) => {
-                return (
-                  <Checkbox
-                    checked={field.value}
-                    onCheckedChange={(checked) => {
-                      setValue(`${day}.isAvailable`, checked);
-                      if (!checked) {
-                        setValue(`${day}.startTime`, "09:00");
-                        setValue(`${day}.endTime`, "17:00");
-                      }
-                    }}
-                  />
-                );
-              }}
-            />
-            <span className="w-24">
-              {day.charAt(0).toUpperCase() + day.slice(1)}
-            </span>
-
-</div>
+              <Controller
+                name={`${day}.isAvailable`}
+                control={control}
+                render={({ field }) => {
+                  return (
+                    <Checkbox
+                      checked={field.value}
+                      onCheckedChange={(checked) => {
+                        setValue(`${day}.isAvailable`, checked);
+                        if (!checked) {
+                          setValue(`${day}.startTime`, "09:00");
+                          setValue(`${day}.endTime`, "17:00");
+                        }
+                      }}
+                    />
+                  );
+                }}
+              />
+              <span className="w-24">
+                {day.charAt(0).toUpperCase() + day.slice(1)}
+              </span>
+            </div>
             {isAvailable && (
               <div className="flex items-center gap-3 mt-3 lg:mt-0">
                 <Controller
@@ -164,7 +166,13 @@ const AvailabilityForm = ({ initialData }) => {
       </div>
 
       {error && <div className="text-red-500 text-sm">{error?.message}</div>}
-      <Button type="submit" className="mt-5 w-full md:w-auto" disabled={loading}>{loading ? "Updating..." : "Update Availability"}</Button>
+      <Button
+        type="submit"
+        className="mt-5 w-full md:w-auto"
+        disabled={loading}
+      >
+        {loading ? "Updating..." : "Update Availability"}
+      </Button>
     </form>
   );
 };

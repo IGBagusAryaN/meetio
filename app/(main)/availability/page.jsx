@@ -14,7 +14,7 @@ const AvailabilityPage = async () => {
         <div className="order-2 lg:order-1">
           <AvailabilityForm initialData={availability || defaultAvailability} />
         </div>
-        <div className="order-1 lg:order-2">
+        <div className="order-1 lg:order-2 flex justify-center">
           <TimeLottie />
         </div>
       </div>

@@ -127,7 +127,7 @@ useEffect(() => {
 
   return (
     <div className="flex flex-col gap-8 p-10 border">
-      <div className="lg:h-96 flex flex-col lg:flex-row gap-5 ">
+      <div className="lg:h-96 flex flex-col md:flex-row gap-5 ">
         {/* Calendar */}
         <div className="w-full">
           <DayPicker
